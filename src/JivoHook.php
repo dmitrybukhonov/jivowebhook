@@ -4,7 +4,13 @@ namespace JivoWebHook;
 
 class JivoHook
 {
+    /**
+     * Unique event to receive
+     */
     public $event;
+    /**
+     * List of events supported by Jivo
+     */
     private static $eventList = [
          'chat_accepted',
         'chat_assigned',
@@ -23,6 +29,11 @@ class JivoHook
         return json_decode(file_get_contents('php://input'), true);
     }
 
+    /**
+     * Getting an array with the event value
+     *
+     * @return array|false
+     */
     public function listen()
     {
         $data = $this->getWebHook();
@@ -36,6 +47,11 @@ class JivoHook
         }
     }
 
+    /**
+     * Receiving a visitor's email
+     *
+     * @return false|string
+     */
     public function getEmailHook()
     {
         $data = $this->getWebHook();
@@ -53,6 +69,11 @@ class JivoHook
         return false;
     }
 
+    /**
+     * Get event list Jivo
+     *
+     * @return array
+     */
     public function getEventList()
     {
         return $this::$eventList;
