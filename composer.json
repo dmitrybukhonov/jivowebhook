@@ -1,0 +1,22 @@
+{
+	"name": "dmitrybukhonov/jivowebhook",
+	"type": "library",
+	"description": "Прием ответов от Jivo, для передачи Email в DMP",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Dmitry Bukhonov",
+			"email": "d.buhonov@yandex.ru",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0",
+      "ext-json": "*"
+    },
+	"autoload": {
+		"psr-4": {
+			"JivoWebHook\\": "src/"
+		}
+	}
+}
